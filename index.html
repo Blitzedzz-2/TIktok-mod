@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Mod Installation Log</title>
+  <style>
+    body {
+      background-color: black;
+      color: #33FF00;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 30px;
+      margin: 20px;
+      color: #33FF00;
+    }
+    .log-container {
+      width: 100%;
+      max-width: 800px;
+      height: 500px;
+      background-color: #000;
+      padding: 10px;
+      overflow-y: auto;
+      border-radius: 10px;
+      border: 1px solid #555;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    }
+    .log {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .log span {
+      color: #33FF00;
+    }
+    .log.warning {
+      color: #FFCC00;
+    }
+    .log.error {
+      color: #FF4444;
+    }
+    .violation-warning {
+      color: #FF4444;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TikTok Mod Installation Log</h1>
+  <div class="log-container" id="log-container">
+    <div class="log"><span>[INFO] </span>Starting TikTok Mod Installation...</div>
+  </div>
+
+  <script>
+    const logContainer = document.getElementById("log-container");
+
+    // Simulating TikTok mod installation steps with WebKit exploit (CVE-2023-3682) and new mods
+    const logs = [
+      { text: "[INFO] Verifying system compatibility...", type: "info" },
+      { text: "[INFO] Checking WebKit vulnerability database...", type: "info" },
+      { text: "[INFO] WebKit exploit vulnerability found (CVE-2023-3682)...", type: "info" },
+      { text: "[INFO] Triggering WebKit exploit to gain root privileges...", type: "info" },
+      { text: "[INFO] Exploit successful, obtaining access to app's root directory...", type: "info" },
+      { text: "[INFO] Extracting TikTok mod files from root directory...", type: "info" },
+      { text: "[INFO] TikTok mod files downloaded successfully.", type: "info" },
+      { text: "[INFO] Verifying TikTok app version...", type: "info" },
+      { text: "[INFO] TikTok version 25.0.2 detected.", type: "info" },
+      { text: "[INFO] Applying mod to TikTok app...", type: "info" },
+      { text: "[INFO] Mod applied: Sticker and Image Comment support.", type: "info" },
+      { text: "[INFO] Mod applied: Unlocking Beta Features.", type: "info" },
+      { text: "[INFO] Mod applied: No Watermark on downloaded videos.", type: "info" },
+      { text: "[INFO] Replacing TikTok core components...", type: "info" },
+      { text: "[INFO] TikTok core patched successfully.", type: "info" },
+      { text: "[INFO] Testing mod features...", type: "info" },
+      { text: "[INFO] Sticker and Image Comment functionality working.", type: "info" },
+      { text: "[INFO] Beta features unlocked and functioning.", type: "info" },
+      { text: "[INFO] No Watermark removal confirmed on test videos.", type: "info" },
+      { text: "[INFO] Mod successfully installed!", type: "info" },
+      { text: "[INFO] TikTok mod installation complete! All features are active.", type: "info" },
+      { text: "[ERROR] Error: TikTok version mismatch detected, retrying...", type: "error" },
+      { text: "[INFO] WebKit exploit completed successfully.", type: "info" },
+      { text: "[INFO] TikTok mod installation completed successfully.", type: "info" }
+    ];
+
+    function randomLog() {
+      const randomIndex = Math.floor(Math.random() * logs.length);
+      const log = logs[randomIndex];
+      const logElement = document.createElement("div");
+      logElement.classList.add("log");
+      const timestamp = new Date().toLocaleTimeString();
+      logElement.innerHTML = \`<span>[${timestamp}]</span> \${log.text}\`;
+
+      if (log.type === "warning") {
+        logElement.classList.add("warning");
+      } else if (log.type === "error") {
+        logElement.classList.add("error");
+      }
+
+      logContainer.appendChild(logElement);
+    }
+
+    // Simulate random log appearance every 1-2 seconds
+    setInterval(randomLog, Math.floor(Math.random() * (3000 - 1000 + 1)) + 1000);
+  </script>
+
+  <div class="violation-warning">
+    <p><strong>Warning: </strong>This modification may violate TikTok's Terms of Service. Use at your own risk.</p>
+  </div>
+</body>
+</html>
